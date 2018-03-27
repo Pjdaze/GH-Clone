@@ -17,7 +17,7 @@ h1 {
 class App extends React.Component {
   render() {
     return (
-  <MainLayout><h1>PJDUX<br />React <br/> Boilerplate</h1></MainLayout>
+  <MainLayout>GH-Clone</MainLayout>
     );
   }
 }
