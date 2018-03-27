@@ -17,7 +17,7 @@ h1 {
 class App extends React.Component {
   render() {
     return (
-  <MainLayout>GH-Clone</MainLayout>
+  <MainLayout><h1>GH-Clone</h1></MainLayout>
     );
   }
 }
