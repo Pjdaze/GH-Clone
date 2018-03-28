@@ -1,23 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import './App.css';
-
+import Header from './components/Header';
 const MainLayout = styled.div`
+height: 100vh;
 
-height: 50vh; 
-
-display: flex;
-justify-content: center;
-align-items: center;
-h1 {
-  text-align: center;
-}
 `;
 
 class App extends React.Component {
   render() {
     return (
-  <MainLayout><h1>GH-Clone</h1></MainLayout>
+  <MainLayout>
+<Header />
+  </MainLayout>
     );
   }
 }
