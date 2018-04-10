@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-const HeaderMenu = styled.div`
+const HeaderMenuWrapper = styled.div`
 display: flex;
 flex: 1 1 auto;
 justify-content: space-between;
@@ -14,7 +14,8 @@ justify-content: space-between;
 
 ul{
     display: flex;
-
+justify-content: space-between;
+align-items: center;
 
     padding-left: 8px;
  li a {
@@ -26,6 +27,14 @@ ul{
 
  }
 }
+.fa-bell, .fa-user {
+width: 16px;
+height: 17px;
+}
+.arrow-down {
+    font-size: 4px;
+}
+
 
 
 
@@ -35,7 +44,7 @@ const HeaderSearch = styled.div`
   
  
    
- .form-control {
+ .form-control  {
     border-right: 1px solid #eaecef;
 
     width: 99.999%;
@@ -75,43 +84,41 @@ color: #fff;
 const Input = styled.input`
  
 
+
  
 
 
 
 `;
 
-export default () => (
 
-<HeaderMenu>
+export default class HeaderMenu extends React.Component {
+
+
+
+render(){
+
+
+return (
+
+<HeaderMenuWrapper>
 
 <HeaderSearch>
-<form>
-    
-    <Input  name="utf8" type="hidden" value="✓" />
-    <label className="form-control">
-
-      <input type="text" className="form-control"  name="q" value="" placeholder="Search GitHub" aria-label="Search GitHub" data-scoped-placeholder="Search" autocapitalize="off" />
-</label>
+<form onSubmit='    '>
+<input ref='username' type='text' placeholder='usename' />
     </form>
 
 </HeaderSearch>
 
-<ul>
-<li> <a href="#">Pull Requests</a></li>
-<li><a href="#">Issues</a></li>
-<li><a href="#">Market Place</a></li>
-<li><a href="#">Explore</a></li>
-</ul>
 
-<div>
-<ul>
-<li><span className="fas fa-bell"></span></li>
-<li>&#43;<span className="fas fa-sort-down"></span></li>
-<li><span className="fas fa-user"></span><span className="fa fa-sort-down"></span></li>
-</ul>
-</div>
 
-</HeaderMenu>
+
+</HeaderMenuWrapper>
 
 )
+
+}
+
+
+
+}
