@@ -1,18 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-const HomeWrapper = styled.div`
-  max-width: 1020px;
-  height: 100vh;
-  margin: 20px auto;
-
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 10px;
-  aside {
-    text-align: center;
-  }
-`;
+import HomeWrapper from "../components/Wappers/HomeWrapper";
 
 class Home extends React.Component {
   constructor(props) {
@@ -34,10 +22,19 @@ class Home extends React.Component {
         this.setState({
           user: {
             username: data.login,
-            avatar_url: data.avatar_url
+            avatar_url: data.avatar_url,
+            id: data.id,
+            login: data.login,
+            followers: data.followers,
+            following: data.following,
+            repos: data.public_repos,
+            bio: data.bio,
+            stars: data.public_gists
           }
         });
       });
+
+    console.log(this.id);
   };
 
   render() {
@@ -48,19 +45,50 @@ class Home extends React.Component {
         <aside className="sidebar">
           <div>
             <img
+              className="avatar"
               src={user.avatar_url}
-              width="200"
-              height="200"
               ref="username"
+              alt="avatar"
             />
+            <div className="bio">
+              <span>{user.login}</span>
+              <span>{user.bio}</span>
+              <button className="btn">Edit bio</button>
+              <button className="btn">Edit profile</button>
+            </div>
           </div>
         </aside>
         <article className="content">
-          <h1>2 column, header and footer</h1>
-          <p>
-            This example uses line-based positioning, to position the header and
-            footer, stretching them across the grid.
-          </p>
+          <header>
+            <nav className="home-nav">
+              <ul>
+                <li className="selected">Overview</li>
+                <li className="selected">
+                  Repository{user.repo}
+                  <span className="bubble-values">{user.repos}</span>
+                </li>
+                <li className="selected">
+                  Starts <span className="bubble-values">{user.stars}</span>
+                </li>
+                <li className="selected">
+                  Followers{" "}
+                  <span className="bubble-values">{user.followers}</span>
+                </li>
+                <li className="selected">
+                  Following <span className="bubble">{user.following}</span>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <div>
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
         </article>
       </HomeWrapper>
     );

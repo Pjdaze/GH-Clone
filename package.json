@@ -37,6 +37,6 @@
   "description": "just another github clone",
   "main": "index.js",
   "repository": "https://github.com/Pjdaze/GH-Clone.git",
-  "author": "pedro diaz <pjdaze@gmail.com>",
+  "author": "pedro diaz <pjdazeux@gmail.com>",
   "license": "MIT"
 }
