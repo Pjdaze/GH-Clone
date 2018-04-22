@@ -20,17 +20,7 @@ class Home extends React.Component {
       .then(data => {
         console.log(data);
         this.setState({
-          user: {
-            username: data.login,
-            avatar_url: data.avatar_url,
-            id: data.id,
-            login: data.login,
-            followers: data.followers,
-            following: data.following,
-            repos: data.public_repos,
-            bio: data.bio,
-            stars: data.public_gists
-          }
+          user: { ...data }
         });
       });
 
@@ -65,17 +55,19 @@ class Home extends React.Component {
                 <li className="selected">Overview</li>
                 <li className="selected">
                   Repository{user.repo}
-                  <span className="bubble-values">{user.repos}</span>
+                  <span className="bubble-values">{user.public_repos}</span>
                 </li>
                 <li className="selected">
-                  Starts <span className="bubble-values">{user.stars}</span>
+                  Starts{" "}
+                  <span className="bubble-values">{user.public_gists}</span>
                 </li>
                 <li className="selected">
                   Followers{" "}
                   <span className="bubble-values">{user.followers}</span>
                 </li>
                 <li className="selected">
-                  Following <span className="bubble">{user.following}</span>
+                  Following{" "}
+                  <span className="bubble-values">{user.following}</span>
                 </li>
               </ul>
             </nav>

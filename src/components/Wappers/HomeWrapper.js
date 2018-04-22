@@ -77,7 +77,7 @@ const HomeWrapper = styled.div`
         color: #586069;
         text-align: center;
         border-bottom: 2px solid transparent;
-        &.selected {
+        &.activex {
     border-bottom: 2px solid #e36209;
   }
       
