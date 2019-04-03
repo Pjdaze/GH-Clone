@@ -27,6 +27,9 @@ const HomeWrapper = styled.div`
       display: flex;
       flex-direction: column;
        padding-top: 20px;
+       font-family: 'Helvetica';
+       font-size: 14px;
+
        span {
            margin-bottom: 20px;
        }

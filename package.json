@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "animate.css": "^3.5.2",
+    "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
     "jshint": "^2.9.5",
     "prop-types": "^15.6.0",
@@ -24,8 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "aws":
-      "yarn run build && s3cmd sync build/* s3://pjdux.com && echo '🚀  Deployed!'"
+    "aws": "yarn run build && s3cmd sync build/* s3://pjdux.com && echo '🚀  Deployed!'"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",

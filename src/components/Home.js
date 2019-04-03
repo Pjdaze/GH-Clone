@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HomeWrapper from "../components/Wappers/HomeWrapper";
+import axios from "axios";
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +16,15 @@ class Home extends React.Component {
   }
   getUser = () => {
     const username = this.refs.username.value;
-    fetch(`https://api.github.com/users/pjdaze`)
+    const url = "https://api.github.com/users/pjdaze";
+    console.log("this is the user name.value: " + username);
+
+    //axios.get(url).then(data =>
+    //  this.setState({
+    //    user: { ...data }
+    //  })
+    //);
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -23,12 +32,11 @@ class Home extends React.Component {
           user: { ...data }
         });
       });
-
-    console.log(this.id);
   };
 
   render() {
     const { user } = this.state;
+    console.log(user.id);
 
     return (
       <HomeWrapper>
@@ -40,8 +48,10 @@ class Home extends React.Component {
               ref="username"
               alt="avatar"
             />
+
             <div className="bio">
               <span>{user.login}</span>
+              <span>{user.location}</span>
               <span>{user.bio}</span>
               <button className="btn">Edit bio</button>
               <button className="btn">Edit profile</button>
@@ -72,15 +82,6 @@ class Home extends React.Component {
               </ul>
             </nav>
           </header>
-          <div>
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-            <div />
-          </div>
         </article>
       </HomeWrapper>
     );
