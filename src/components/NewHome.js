@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import HomeWrapper from "./Wappers/HomeWrapper";
 import Axios from "axios";
 
-const Home = () => {
+const NewHome = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -16,7 +16,12 @@ const Home = () => {
     <HomeWrapper>
       <aside className="sidebar">
         <div>
-          <img className="avatar" src={user.avatar_url} alt="avatar" />
+          <img
+            className="avatar"
+            src={user.avatar_url}
+            ref="username"
+            alt="avatar"
+          />
 
           <div className="bio">
             <span>{user.login}</span>
@@ -56,4 +61,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NewHome;
